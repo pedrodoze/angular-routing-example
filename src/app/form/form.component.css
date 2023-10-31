@@ -1,0 +1,14 @@
+.confirmation-message {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: #fff; /* Cor do texto branco */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+    display: none; /* Inicialmente, a mensagem estará oculta */
+  }
+  
+  .confirmation-message.show {
+    display: block; /* Quando a classe .show é adicionada, a mensagem fica visível */
+  }
+  

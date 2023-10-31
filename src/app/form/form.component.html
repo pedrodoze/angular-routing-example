@@ -1,0 +1,21 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label for="name">Nome:</label>
+  <input type="text" id="name" formControlName="name">
+  <div *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched" class="error-message">
+    Nome é obrigatório.
+  </div>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" formControlName="email">
+  <div *ngIf="myForm.get('email')?.hasError('required') && myForm.get('email')?.touched" class="error-message">
+    Email é obrigatório.
+  </div>
+  <div *ngIf="myForm.get('email')?.hasError('email') && myForm.get('email')?.touched" class="error-message">
+    Email inválido.
+  </div>
+
+  <button type="submit">Enviar</button>
+</form>
+<div *ngIf="confirmationMessage" [ngClass]="{'confirmation-message': true, 'show': confirmationMessage}" class="confirmation-message">
+  {{ confirmationMessage }}
+</div>
